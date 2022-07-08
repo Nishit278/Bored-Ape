@@ -181,7 +181,6 @@ span.text-red {
   /* position: relative; */
 }
 
-
 .hero-banner-texts {
   /* background-color: white; */
   /* margin: 70px 0 ; */
@@ -314,7 +313,7 @@ span.text-red {
 .banner-desc .left h3 {
   font-weight: 900;
   font-size: 80px;
-  margin-left: 25px;
+  margin-left: 0px;
   color: rgb(39, 101, 193);
 }
 .banner-desc .left p {
@@ -326,15 +325,22 @@ span.text-red {
   position: absolute;
   /* top: -35%;
   left: 8%; */
-  top: -15%;
+  top: -25%;
   left: 35%;
 }
 .banner-desc .right {
   line-height: 1.4;
+  display: flex;
+  flex-direction: column;
+  margin-right: 2rem;
+  flex-wrap: wrap;
 }
 .banner-desc .right h3 {
   font-weight: 800;
-  font-size: 60px;
+  font-size: 40px;
+  max-width: 900px;
+  font-family: "playFair", "san-serif";
+  /* margin-right: 60px; */
 }
 .banner-desc .right p {
   font-size: 18px;

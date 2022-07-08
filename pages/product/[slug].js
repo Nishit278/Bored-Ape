@@ -14,8 +14,13 @@ import { addRequestMeta } from "next/dist/server/request-meta";
 const ProductDetails = ({ product, products }) => {
   const { image, name, details, price } = product;
   const [index, setIndex] = useState(0);
-  const { decQty, incQty, qty, onAdd } = useStateContext();
+  const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
   // console.log(product);
+  const handleBuyNow = () => {
+    onAdd(product, qty);
+
+    setShowCart(true);
+  };
   return (
     <div>
       <div className="product-detail-container">
@@ -61,9 +66,7 @@ const ProductDetails = ({ product, products }) => {
               <span className="minus" onClick={decQty}>
                 <AiOutlineMinus />
               </span>
-              <span className="num" onClick="">
-                {qty}
-              </span>
+              <span className="num">{qty}</span>
               <span className="plus" onClick={incQty}>
                 <AiOutlinePlus />
               </span>
@@ -73,7 +76,7 @@ const ProductDetails = ({ product, products }) => {
             <button className="add-to-cart" onClick={() => onAdd(product, qty)}>
               Add to cart
             </button>
-            <button className="buy-now" onClick="">
+            <button className="buy-now" onClick={handleBuyNow}>
               Buy now
             </button>
           </div>
