@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useContext } from "react";
+import { StateContext, useStateContext } from "../../context/StateContext";
 import { client, urlFor } from "../../lib/client";
 import {
   AiOutlineMinus,
@@ -7,11 +9,13 @@ import {
   AiOutlineStar,
 } from "react-icons/ai";
 import { Product } from "../../components";
+import { addRequestMeta } from "next/dist/server/request-meta";
 
 const ProductDetails = ({ product, products }) => {
   const { image, name, details, price } = product;
   const [index, setIndex] = useState(0);
-
+  const { decQty, incQty, qty, onAdd } = useStateContext();
+  // console.log(product);
   return (
     <div>
       <div className="product-detail-container">
@@ -51,22 +55,22 @@ const ProductDetails = ({ product, products }) => {
           <h4>Details: </h4>
           <p>{details}</p>
           <p className="price">Rs {price}</p>
-          <div className="quuntity">
+          <div className="quantity">
             <h3>Quantity: </h3>
             <p className="quantity-desc">
-              <span className="minus" onClick="">
+              <span className="minus" onClick={decQty}>
                 <AiOutlineMinus />
               </span>
               <span className="num" onClick="">
-                0
+                {qty}
               </span>
-              <span className="plus" onClick="">
+              <span className="plus" onClick={incQty}>
                 <AiOutlinePlus />
               </span>
             </p>
           </div>
           <div className="buttons">
-            <button className="add-to-cart" onClick="">
+            <button className="add-to-cart" onClick={() => onAdd(product, qty)}>
               Add to cart
             </button>
             <button className="buy-now" onClick="">
@@ -118,7 +122,7 @@ export const getStaticProps = async ({ params: { slug } }) => {
   const product = await client.fetch(query);
   const products = await client.fetch(productsQuery);
 
-  console.log(product);
+  // console.log(product);
 
   return {
     props: { products, product },
