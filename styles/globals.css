@@ -190,6 +190,8 @@ span.text-red {
   /* margin: 70px 0 ; */
   /* background-color: white; */
   display: flex;
+  /* background-color: black; */
+  /* opacity: 50%; */
   justify-content: center;
   flex-direction: column;
   align-items: center;
@@ -208,11 +210,21 @@ span.text-red {
   line-height: 0.9;
   width: 100%; */
   border-radius: 15px;
+<<<<<<< HEAD
   /* background-color: rgb(39, 101, 193);
    */
   background-image: url("https://www.thefashionisto.com/wp-content/uploads/2022/04/Zara-Origins-Campaign-2022-003.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+=======
+  /* background-color: rgb(39, 101, 193); */
+  background-image: url("https://www.thefashionisto.com/wp-content/uploads/2022/04/Zara-Origins-Campaign-2022-003.jpg");
+  background-repeat: no-repeat;
+  /* height: auto; */
+  background-size: cover;
+  background-blend-mode: difference;
+  /* opacity: 10%; */
+>>>>>>> origin/main
   height: 70vh;
   display: flex;
   gap: 70px;
@@ -243,7 +255,6 @@ span.text-red {
   cursor: pointer;
   z-index: 10000 !important;
 }
-
 .hero-banner-container h3 {
   font-size: 4rem;
   color: rgb(212, 212, 212);
@@ -306,17 +317,20 @@ span.text-red {
 .banner-desc {
   display: flex;
   justify-content: space-between;
+  /* justify-content: space-between; */
+  /* background-color: black; */
 }
 .banner-desc button {
-  border-radius: 15px;
+  /* border-radius: 15px; */
   padding: 10px 16px;
   background-color: white;
-  color: red;
+  color: black;
   border: none;
   margin-top: 40px;
   font-size: 18px;
   font-weight: 500;
   cursor: pointer;
+  width: 190px;
 }
 .banner-desc .left h3 {
   font-weight: 900;
