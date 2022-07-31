@@ -208,7 +208,11 @@ span.text-red {
   line-height: 0.9;
   width: 100%; */
   border-radius: 15px;
-  background-color: rgb(39, 101, 193);
+  /* background-color: rgb(39, 101, 193);
+   */
+  background-image: url("https://www.thefashionisto.com/wp-content/uploads/2022/04/Zara-Origins-Campaign-2022-003.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 70vh;
   display: flex;
   gap: 70px;

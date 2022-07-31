@@ -14,13 +14,13 @@ const HeroBanner = ({ heroBanner }) => {
           <button type="button">{heroBanner.buttonText}</button>
         </Link>
       </div>
-      <div className="hero-image-container">
+      {/* <div className="hero-image-container">
         <img
           src={urlFor(heroBanner.image)}
           alt="tshirt"
           className="hero-banner-image"
         />
-      </div>
+      </div> */}
     </div>
   );
 };
