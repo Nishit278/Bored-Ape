@@ -128,6 +128,9 @@ span.text-red {
   width: 300px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   height: 400px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 12px;
 }
 .image-container {
   /* height: 85%;
@@ -155,6 +158,9 @@ span.text-red {
   margin-top: 10px;
   font-size: 20px;
   padding: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .product-price {
   font-size: 20px;
