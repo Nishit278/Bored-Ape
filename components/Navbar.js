@@ -13,9 +13,15 @@ const Navbar = () => {
           BORED APE
         </Link>
       </p>
-      <button className="cart-icon" type="button" onClick = {()=>setShowCart(true)}>
+      <button
+        className="cart-icon"
+        type="button"
+        onClick={() => setShowCart(true)}
+      >
         <AiOutlineShopping />
-        <span className="cart-item-qty">{totalQuantities}</span>
+        {totalQuantities > 0 && (
+          <span className="cart-item-qty">{totalQuantities}</span>
+        )}
       </button>
       {showCart && <Cart />}
     </div>

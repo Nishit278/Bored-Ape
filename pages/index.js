@@ -2,21 +2,21 @@ import React from "react";
 import { Product, Footer, HeroBanner, FooterBanner } from "../components/index";
 import { client } from "../lib/client";
 
-const Home = ({products, bannerData}) => {
+const Home = ({ products, bannerData }) => {
   return (
-    <>
+    <main className="products_page">
       <HeroBanner heroBanner={bannerData.length && bannerData[0]} />
       <div className="products-heading">
         <h2>Best Selling Products</h2>
         <p>Free shipping on all orders above Rs 999. Order now!</p>
       </div>
       <div className="products-container">
-        {products?.map(
-          (prod) => <Product key={prod._id} product={prod} />
-        )}
+        {products?.map((prod) => (
+          <Product key={prod._id} product={prod} />
+        ))}
       </div>
       <FooterBanner footerBanner={bannerData && bannerData[1]} />
-    </>
+    </main>
   );
 };
 
